@@ -8,7 +8,7 @@ This repo demonstrates the **simplest possible** multi-page zip and navigation f
 
 ### One Zip per Slide vs. Single Zip
 
-The **recommended approach** for production Intelligent Content is to create **one zip per slide** (one Key Message per zip). This gives you independent version control, granular tracking, and the ability to reorder or swap slides without repackaging the entire presentation.
+The **recommended approach** for production Intelligent Content is to create **one zip per slide** (one Product Guidance per zip). This gives you independent version control, granular tracking, and the ability to reorder or swap slides without repackaging the entire presentation.
 
 This repo is for teams that want **all slides bundled into a single zip** — useful for prototyping, demos, or presentations where slides are tightly coupled and always delivered together.
 
