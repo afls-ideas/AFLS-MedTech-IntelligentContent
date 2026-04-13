@@ -1,5 +1,7 @@
 # LSC Intelligent Content — Multi-Page Single Zip Template
 
+![Immunexis Multipage SingleZip Presentation](assets/Immunexis_Multipage_SingleZip_Presentation.gif)
+
 ## Overview
 
 This repo demonstrates the **simplest possible** multi-page zip and navigation for Life Sciences Cloud (LSC) Intelligent Content (CLM). It is a 5-slide eDetailer presentation packaged as a single zip file that runs inside the LSC CLM player on iPad.
