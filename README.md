@@ -1,8 +1,25 @@
-# LSC Intelligent Content — Multi-Page Zip Template
+# LSC Intelligent Content — Multi-Page Single Zip Template
 
 ## Overview
 
-This is a 5-slide eDetailer presentation template for Life Sciences Cloud (LSC) Intelligent Content (CLM). It is packaged as a single multi-page zip file that runs inside the LSC CLM player on iPad.
+This repo demonstrates the **simplest possible** multi-page zip and navigation for Life Sciences Cloud (LSC) Intelligent Content (CLM). It is a 5-slide eDetailer presentation packaged as a single zip file that runs inside the LSC CLM player on iPad.
+
+**Intentionally minimal.** All JavaScript is inline in each HTML file — we deliberately do not separate it into external `.js` files. The goal is to show how easy it is to build navigable multi-slide content with just HTML and the `PresentationPlayer` native bridge API.
+
+### One Zip per Slide vs. Single Zip
+
+The **recommended approach** for production Intelligent Content is to create **one zip per slide** (one Key Message per zip). This gives you independent version control, granular tracking, and the ability to reorder or swap slides without repackaging the entire presentation.
+
+This repo is for teams that want **all slides bundled into a single zip** — useful for prototyping, demos, or presentations where slides are tightly coupled and always delivered together.
+
+### Quick Start
+
+A ready-to-upload zip is included in the repo: **`output/Immunexis_Multipage_SingleZip.zip`**. Upload it directly to Admin Console > Intelligent Content to see it in action.
+
+### Documentation
+
+- [Presentation Player Functions](https://help.salesforce.com/s/articleView?id=ind.lsc_presentation_player_functions.htm&type=5) — `PresentationPlayer.gotoSlide()`, `goNextPage()`, `goPreviousPage()`, and other native bridge methods
+- [Presentation Zip File Sources](https://help.salesforce.com/s/articleView?id=ind.lsc_presentation_zip_file_sources.htm&type=5) — How to structure and package zip files for Intelligent Content
 
 ## Folder Structure
 
