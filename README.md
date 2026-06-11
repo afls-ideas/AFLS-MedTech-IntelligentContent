@@ -1,225 +1,187 @@
-# LSC Intelligent Content — Multi-Page Single Zip Template
+# MedTech Demo — LSC Intelligent Content eDetailer Presentations
 
-![Immunexis Multipage SingleZip Presentation](assets/Immunexis_Multipage_SingleZip_Presentation.gif)
+This repo contains five eDetailer presentation suites for a MedTech device portfolio, built for **Salesforce Life Sciences Cloud (LSC) Intelligent Content (CLM)**. Each presentation is structured as **one zip per slide** (the recommended production pattern), enabling independent version control, granular rep tracking, and flexible content sequencing.
 
-## Overview
+---
 
-This repo demonstrates the **simplest possible** multi-page zip and navigation for Life Sciences Cloud (LSC) Intelligent Content (CLM). It is a 5-slide eDetailer presentation packaged as a single zip file that runs inside the LSC CLM player on iPad.
+## Product Portfolio
 
-**Intentionally minimal.** All JavaScript is inline in each HTML file — we deliberately do not separate it into external `.js` files. The goal is to show how easy it is to build navigable multi-slide content with just HTML and the `PresentationPlayer` native bridge API.
+### 1. Robotic Surgery — VisuMax
+A next-generation robotic surgical platform delivering sub-millimeter precision, tremor filtration, and 3D HD visualization.
 
-### One Zip per Slide vs. Single Zip
+| # | Slide | LSC Record Name |
+|---|-------|----------------|
+| 1 | Overview | `VisuMax Overview` |
+| 2 | Technology | `VisuMax Technology` |
+| 3 | Clinical Outcomes | `VisuMax Clinical` |
+| 4 | System Portfolio | `VisuMax Portfolio` |
+| 5 | Why VisuMax | `VisuMax WhyVisuMax` |
 
-The **recommended approach** for production Intelligent Content is to create **one zip per slide** (one Product Guidance per zip). This gives you independent version control, granular tracking, and the ability to reorder or swap slides without repackaging the entire presentation.
+**Output folder:** `output_robotic_surgery/`
+**Nav color:** Deep navy → midnight blue (`#0a1628 → #0d2d5e`)
 
-This repo is for teams that want **all slides bundled into a single zip** — useful for prototyping, demos, or presentations where slides are tightly coupled and always delivered together.
+---
 
-### Quick Start
+### 2. Orthopedic Implants — TitanHip & TitanKnee + OrthoNav
+Primary and revision hip and knee reconstruction systems with OrthoNav robotic arm guidance for sub-degree implant alignment accuracy.
 
-A ready-to-upload zip is included in the repo: **`output/Immunexis_Multipage_SingleZip.zip`**. Upload it directly to Admin Console > Intelligent Content to see it in action.
+| # | Slide | LSC Record Name |
+|---|-------|----------------|
+| 1 | Overview | `TitanHip Overview` |
+| 2 | OrthoNav Guidance | `TitanHip Technology` |
+| 3 | Clinical Outcomes | `TitanHip Clinical` |
+| 4 | Implant Portfolio | `TitanHip Portfolio` |
+| 5 | Why TitanHip & Knee | `TitanHip WhyTitanHip` |
 
-### Documentation
+**Output folder:** `output_orthopedic/`
+**Nav color:** Deep charcoal → warm charcoal (`#1a1410 → #3d2b1a`)
 
-- [Presentation Player Functions](https://help.salesforce.com/s/articleView?id=ind.lsc_presentation_player_functions.htm&type=5) — `PresentationPlayer.gotoSlide()`, `goNextPage()`, `goPreviousPage()`, and other native bridge methods
-- [Presentation Zip File Sources](https://help.salesforce.com/s/articleView?id=ind.lsc_presentation_zip_file_sources.htm&type=5) — How to structure and package zip files for Intelligent Content
+---
 
-## Folder Structure
+### 3. Spine & Neuro — SpinePath + NeuroNav
+Comprehensive spine reconstruction covering interbody fusion (ACDF, TLIF, LLIF), pedicle screw stabilization, and the NeuroNav real-time surgical navigation system.
+
+| # | Slide | LSC Record Name |
+|---|-------|----------------|
+| 1 | Overview | `SpinePath Overview` |
+| 2 | NeuroNav Navigation | `SpinePath Technology` |
+| 3 | Clinical Outcomes | `SpinePath Clinical` |
+| 4 | Implant Portfolio | `SpinePath Portfolio` |
+| 5 | Why SpinePath | `SpinePath WhySpinePath` |
+
+**Output folder:** `output_spine_neuro/`
+**Nav color:** Deep forest green → teal (`#0d2b1a → #0d3b2e`)
+
+---
+
+### 4. Cardiac & Vascular — HeartGate TAVR + VascuStent
+Transcatheter aortic valve replacement with a repositionable self-expanding design, plus a comprehensive peripheral and coronary stent and balloon portfolio.
+
+| # | Slide | LSC Record Name |
+|---|-------|----------------|
+| 1 | Overview | `HeartGate Overview` |
+| 2 | TAVR Technology | `HeartGate Technology` |
+| 3 | Clinical Outcomes | `HeartGate Clinical` |
+| 4 | Cardiac & Vascular Portfolio | `HeartGate Portfolio` |
+| 5 | Why HeartGate | `HeartGate WhyHeartGate` |
+
+**Output folder:** `output_cardiac_vascular/`
+**Nav color:** Deep crimson → dark red (`#2b0a0a → #5c1010`)
+
+---
+
+### 5. Endoscopy — ClearView 4K + ScopeGuide
+4K Ultra HD endoscopy tower with AI-assisted lesion detection, flexible endoscopes for gastroscopy, colonoscopy, and bronchoscopy, and ScopeGuide real-time 3D scope position mapping.
+
+| # | Slide | LSC Record Name |
+|---|-------|----------------|
+| 1 | Overview | `ClearView Overview` |
+| 2 | 4K Imaging Technology | `ClearView Technology` |
+| 3 | ScopeGuide Navigation | `ClearView Clinical` |
+| 4 | Endoscopy Portfolio | `ClearView Portfolio` |
+| 5 | Why ClearView | `ClearView WhyClearView` |
+
+**Output folder:** `output_endoscopy/`
+**Nav color:** Deep cerulean → dark blue (`#0a1a2b → #0d2d4a`)
+
+---
+
+## Repository Structure
 
 ```
-output/
-├── 01_index.html          ← Slide 1 (loaded first by CLM player)
-├── 01_thumbnail.jpg       ← Thumbnail for slide 1
-├── 02_index.html          ← Slide 2
-├── 02_thumbnail.jpg
-├── 03_index.html          ← Slide 3
-├── 03_thumbnail.jpg
-├── 04_index.html          ← Slide 4
-├── 04_thumbnail.jpg
-├── 05_index.html          ← Slide 5
-├── 05_thumbnail.jpg
-├── assets/                ← Slide background images
-│   ├── 01_Intro.png
-│   ├── 02_Efficacy.png
-│   ├── 03_Safety.png
-│   ├── 04_Dosing.png
-│   └── 05_PatientSupport.png
-├── prompts.md             ← AI image generation prompts
-└── README.md              ← This file
+output_robotic_surgery/
+├── 01_VisuMax_Overview/
+│   ├── 01_index.html        ← Slide HTML (entry point for this zip)
+│   ├── 01_thumbnail.jpg     ← 400×300px thumbnail
+│   └── assets/
+│       └── 01_Intro.png     ← 2048×1448px slide background image
+├── 01_VisuMax_Overview.zip  ← Upload this zip to LSC
+├── 02_VisuMax_Technology/
+├── 02_VisuMax_Technology.zip
+├── 03_VisuMax_Clinical/
+├── 03_VisuMax_Clinical.zip
+├── 04_VisuMax_Portfolio/
+├── 04_VisuMax_Portfolio.zip
+├── 05_VisuMax_WhyVisuMax/
+└── 05_VisuMax_WhyVisuMax.zip
+
+images/
+├── robotic_surgery/         ← Source PNG images (2048×1448px)
+├── orthopedic/
+├── spine_neuro/
+├── cardiac_vascular/
+└── endoscopy/
+
+prompts_robotic_surgery.md   ← AI image generation prompts
+prompts_orthopedic.md
+prompts_spine_neuro.md
+prompts_cardiac_vascular.md
+prompts_endoscopy.md
 ```
 
-### Naming Convention
+---
 
-- **`XX_index.html`** — The numeric prefix (`01_`, `02_`, etc.) determines the page order in the CLM player. The filename must end in `_index.html`.
-- **`XX_thumbnail.jpg`** — Thumbnail images shown in the presentation page list. Must match the numeric prefix of the corresponding HTML file.
-- **`assets/`** — Contains slide background images referenced by the HTML files.
+## How Navigation Works (Multi-Zip Pattern)
 
-## How to Package as a Zip
-
-1. Select **all files and folders inside** the `output/` directory (not the `output/` folder itself).
-2. Compress into a single `.zip` file.
-
-On macOS:
-```bash
-cd output
-zip -r ../Immunexis_Multipage_SingleZip.zip . -x "prompts.md" -x "README.md"
-```
-
-The resulting zip should have this structure at its root:
-```
-Immunexis_Multipage_SingleZip.zip
-├── 01_index.html
-├── 01_thumbnail.jpg
-├── 02_index.html
-├── 02_thumbnail.jpg
-├── 03_index.html
-├── 03_thumbnail.jpg
-├── 04_index.html
-├── 04_thumbnail.jpg
-├── 05_index.html
-├── 05_thumbnail.jpg
-└── assets/
-    ├── 01_Intro.png
-    ├── 02_Efficacy.png
-    ├── 03_Safety.png
-    ├── 04_Dosing.png
-    └── 05_PatientSupport.png
-```
-
-**Do not** include `prompts.md` or `README.md` in the zip — they are for reference only.
-
-## How to Upload to LSC via Admin Console
-
-### Step 1: Navigate to Intelligent Content
-
-1. Log in to your Salesforce org.
-2. Open the **App Launcher** (waffle icon, top left) and search for **Admin Console**.
-3. In the Admin Console, click **Intelligent Content** in the left sidebar.
-
-### Step 2: Upload the Zip
-
-1. Click the **Upload** button (or **New Presentation** depending on your version).
-2. Select `Immunexis_Multipage_SingleZip.zip` from your local machine.
-3. LSC will process the zip and automatically detect the 5 HTML pages based on the `XX_index.html` naming convention.
-4. A **Presentation** record is created, along with 5 **PresentationPage** records (one per slide).
-5. The thumbnail images (`XX_thumbnail.jpg`) are automatically associated with their corresponding pages.
-
-### Step 3: Configure the Presentation
-
-1. Set the **Presentation Name** (e.g., "Immunexis eDetailer").
-2. Set the **Status** to **Active** (or set Activation/Deactivation dates for scheduled availability).
-3. Optionally configure:
-   - **Player Gesture** — swipe behavior between slides
-   - **Enable Double Tap Zoom** — allow zoom on content
-   - **Enable Pinch Zoom** — allow pinch-to-zoom
-   - **Send by Email** — allow reps to email the presentation
-
-### Step 4: Assign Topics and Products
-
-1. On the Presentation record, assign **Topics** to categorize the content (e.g., "Immunology").
-2. Assign **Products** to individual pages or to all pages to link the presentation to your product catalog.
-
-### Step 5: Distribute to Territories
-
-1. On the Presentation record, click **Distribute** (or use the territory distribution section).
-2. Select the territories whose field reps should receive this content.
-3. Choose whether to **include child territories** (cascades to all sub-territories) or target specific territories only.
-
-### Step 6: Sync to iPad
-
-1. Go to **Admin Console > Mobile Settings** and regenerate the **metadata cache** so the new presentation is included in the next sync.
-2. On the iPad, open the LSC Mobile app and perform a **sync** to download the presentation.
-3. The presentation will appear in the rep's content library, ready for use during calls.
-
-### Verifying the Upload
-
-After upload, you can verify the content was processed correctly:
-
-- **Presentation record** — should show Status, page count, and content details
-- **PresentationPage records** — should list 5 pages in order (01 through 05) with thumbnails
-- **Admin Console > Intelligent Content** — the presentation should appear in the content list with a "5 pages" indicator
-
-## How the Navigation Bar Works
-
-Each HTML slide contains a `<nav>` bar at the top with links to all 5 slides. Navigation uses the **PresentationPlayer** native bridge API, which is injected into the JavaScript runtime by the LSC CLM player on iPad.
-
-### The PresentationPlayer.gotoSlide() Method
-
-```javascript
-PresentationPlayer.gotoSlide(PageId, slideName, animation)
-```
-
-| Parameter   | Type           | Description |
-|-------------|----------------|-------------|
-| `PageId`    | String or null | Salesforce ID of the target PresentationPage record. Pass `null` to navigate by slide name. |
-| `slideName` | String         | The HTML filename within the zip (e.g., `"02_index.html"`). Used when PageId is null. |
-| `animation` | String or null | Transition animation. Pass `null` for default. |
-
-### How It Is Used in This Template
-
-Each nav link calls `gotoSlide` with `null` for PageId and the target HTML filename:
+Each zip contains exactly one slide (`01_index.html`). The nav bar navigates between separately uploaded zips using `PresentationPlayer.gotoSlide()` with the **LSC Product Guidance record name** as the first argument:
 
 ```html
+<!-- On the Overview slide (currently active) -->
 <nav>
-  <a onclick="PresentationPlayer.gotoSlide(null,'01_index.html',null)">Overview</a>
-  <a onclick="PresentationPlayer.gotoSlide(null,'02_index.html',null)">Efficacy</a>
-  <a onclick="PresentationPlayer.gotoSlide(null,'03_index.html',null)">Safety</a>
-  <a onclick="PresentationPlayer.gotoSlide(null,'04_index.html',null)">Dosing</a>
-  <a onclick="PresentationPlayer.gotoSlide(null,'05_index.html',null)">Resources</a>
+  <a class="active" onclick="PresentationPlayer.gotoSlide(null,'01_index.html',null)">Overview</a>
+  <a onclick="PresentationPlayer.gotoSlide('VisuMax Technology','01_index.html',null)">Technology</a>
+  <a onclick="PresentationPlayer.gotoSlide('VisuMax Clinical','01_index.html',null)">Clinical</a>
+  <a onclick="PresentationPlayer.gotoSlide('VisuMax Portfolio','01_index.html',null)">Portfolio</a>
+  <a onclick="PresentationPlayer.gotoSlide('VisuMax WhyVisuMax','01_index.html',null)">Why VisuMax</a>
 </nav>
 ```
 
-The current slide's link has `class="active"` for visual highlighting.
+**Critical:** The first argument (`'VisuMax Technology'`) must match the **exact name of the Product Guidance record in LSC** — including capitalization and spacing. A mismatch produces a "page can't be accessed" error on device.
 
-### Important: Always Use 3 Arguments
+- The **active slide** uses `null` as the first argument (navigate within current zip).
+- All other slides use the LSC record name to jump between zips.
+- Always pass **3 arguments** — passing only 1 causes the CLM player to treat the string as a PageId and append `.pdf`.
 
-```javascript
-// CORRECT — 3 arguments
-PresentationPlayer.gotoSlide(null, "02_index.html", null);
+---
 
-// WRONG — 1 argument (CLM player treats it as PageId and appends .pdf)
-PresentationPlayer.gotoSlide("02_index.html");
+## How to Upload to LSC
+
+1. Go to **Admin Console > Intelligent Content**.
+2. Upload each `.zip` file individually — **5 uploads per product = 25 uploads total**.
+3. Set the **Product Guidance record name** to match exactly what is in the nav tables above.
+4. Set **Status** to **Active**.
+5. Assign **Products** and **Topics** as appropriate.
+6. **Distribute** to the relevant territories.
+7. Regenerate the **metadata cache** so the content syncs to field rep iPads.
+
+---
+
+## Generating Slide Images
+
+Each product has a dedicated prompt file with 5 detailed Nano Banana-style image generation prompts — one per slide, at **2048×1448 pixels**.
+
+| Product | Prompt File |
+|---------|------------|
+| Robotic Surgery | `prompts_robotic_surgery.md` |
+| Orthopedic Implants | `prompts_orthopedic.md` |
+| Spine & Neuro | `prompts_spine_neuro.md` |
+| Cardiac & Vascular | `prompts_cardiac_vascular.md` |
+| Endoscopy | `prompts_endoscopy.md` |
+
+Paste prompts into **Google Gemini**, **ChatGPT (DALL-E 3)**, **Midjourney** (`--ar 256:181`), or **Adobe Firefly**. Save outputs as PNG into the corresponding `images/<product>/` folder.
+
+Thumbnails are auto-generated from the slide images at **400×300px**:
+```bash
+sips -z 300 400 assets/01_Intro.png --out 01_thumbnail.jpg
 ```
 
-### Other Navigation Methods
+---
 
-| Method | Description |
-|--------|-------------|
-| `PresentationPlayer.goNextPage()` | Navigate to the next page in sequence |
-| `PresentationPlayer.goPreviousPage()` | Navigate to the previous page in sequence |
+## Slide Dimensions
 
-### Testing Locally
-
-The `PresentationPlayer` object is only available inside the LSC CLM player on iPad. When previewing HTML files in a desktop browser, navigation clicks will produce a JavaScript error (`PresentationPlayer is not defined`). This is expected — the content is designed to run within the CLM runtime.
-
-**Do not** define a `PresentationPlayer` shim in your JavaScript. The native bridge object is injected by the CLM runtime and overwriting it will cause "Content could not load" errors on the device.
-
-## Slide Layout
-
-Each HTML file follows this structure:
-
-- **Nav bar**: 44px tall, HTML with inline styles and `onclick` handlers
-- **Content area**: 1024 x 724px, displays a single background image from the `assets/` folder
-- **Total viewport**: 1024 x 768px (iPad logical resolution, rendered at 2x Retina = 2048 x 1536 physical pixels)
-
-The background images are generated at **2048 x 1448 pixels** (2x the 1024x724 content area) for Retina sharpness on iPad Pro 13".
-
-## Customizing This Template
-
-### Changing Slide Content
-
-1. Generate new background images at 2048 x 1448 pixels using the prompts in `prompts.md` as a starting point.
-2. Replace the corresponding PNG in the `assets/` folder.
-3. Regenerate thumbnails at 400 x 300 pixels.
-
-### Adding or Removing Slides
-
-1. Add/remove `XX_index.html` and `XX_thumbnail.jpg` files, keeping the numeric prefix sequence.
-2. Update the `<nav>` links in **every** HTML file to reflect the new slide list.
-
-### Changing the Color Scheme
-
-The nav bar uses an inline CSS gradient. Update this line in each HTML file:
-
-```css
-nav { background: linear-gradient(135deg, #2d1854, #4a1a7a); }
-```
+| Element | Logical (CSS) | Physical (Retina 2×) |
+|---------|--------------|----------------------|
+| Full viewport | 1024 × 768px | 2048 × 1536px |
+| Nav bar | 1024 × 44px | — |
+| Slide content area | 1024 × 724px | 2048 × 1448px |
+| Thumbnail | 400 × 300px | — |
